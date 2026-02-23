@@ -7,23 +7,17 @@ let audioCtx,
   currentChord = 0,
   globalStep = 0,
   currentDensity = 0.4,
-  bpm = 120;
+  bpm = 120,
+  mouseX = 0,
+  mouseY = 0,
+  currentFilterFreq = 2000,
+  currentReverbAmount = 0;
 
 const chords = [
   [65.41, 98.0],
   [73.42, 110.0],
   [87.31, 130.81]
 ];
-
-let mouseX = 0,
-  mouseY = 0,
-  currentFilterFreq = 2000,
-  currentReverbAmount = 0;
-
-window.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
 
 async function updateBPM() {
   if (navigator.getBattery) {
