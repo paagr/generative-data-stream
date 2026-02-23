@@ -1,0 +1,59 @@
+:root {
+  --light-grayish-beige: #dddbd6;
+  --scarlet: #ff1a00;
+}
+
+body {
+  --bg: var(--light-grayish-beige);
+  background: var(--bg);
+  font-family: Arial;
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  cursor: none;
+}
+
+#app {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  background: #dddbd6;
+}
+
+.cell {
+  border: none;
+  position: relative;
+  overflow: hidden;
+  background: #dddbd6;
+  transition: background 0.15s ease-out;
+}
+
+.content {
+  --color: var(--scarlet);
+  color: var(--color);
+  opacity: 0.8;
+  font-family: Arial;
+  text-transform: uppercase;
+  white-space: pre;
+  position: absolute;
+  top: 0;
+  left: 1px;
+  line-height: 0.85;
+  font-weight: light;
+  pointer-events: none;
+}
+
+.active {
+  --bg: var(--scarlet);
+  background: var(--bg) !important;
+  z-index: 10;
+}
+
+.active .content {
+  --color: var(--light-grayish-beige);
+  color: var(--color) !important;
+  opacity: 1;
+}
