@@ -208,8 +208,8 @@ function createCell(container, depth) {
 		const isHorizontal = Math.random() > 0.5;
 
 		content.innerText = isHorizontal
-			? (txt + " — ").repeat(20)
-			: (txt + "\n").repeat(60);
+			? (`${txt} — `).repeat(20)
+			: (`${txt}\n`).repeat(60);
 		if (isHorizontal) content.style.whiteSpace = "nowrap";
 
 		const sizes = ["40px", "18px", "9px", "5px", "3px"];
